@@ -1,0 +1,80 @@
+install angular ->
+        npm install -g @angular/cli 
+
+create new anuglar project ->
+        ng new 23-mean-r-1 
+
+
+ng serve 
+
+ng serve --open 
+
+ng s --o 
+
+page -> feature -> component 
+
+adv java -> LoginServlet -> Login.html -> login.css ->  
+
+component -> 4 files 
+1) component.ts 
+2) component.html
+3) component.css 
+4) component.spec.ts 
+
+app.component.ts 
+login.component.ts 
+
+now clear all data from app.component.html -> keep <router-outlet> 
+
+angular -> component 
+.ts 
+
+
+
+generate component 
+
+ng generate component signup 
+ng g c  signup 
+
+
+---------------------------------------------
+angular -> framework -> type script -> 
+
+16.X
+16.X 
+
+
+ng new project-name 
+
+ng generate component login 
+
+routes -> url -> app.routing-module.ts 
+routes = [
+
+        {path:"login",component:LoginComponent}
+]
+
+index.html -> 
+                <app-route></app-route> 
+
+
+login -> login component -> login.html 
+
+<router-outlet></router-outlet> -> component load -> html 
+
+
+
+1) login.component.ts 
+2) logn.component.spec.ts 
+3) login.component.css 
+4) login.component.html 
+
+----------------------------------------------------------------
+
+
+
+
+
+
+
+
