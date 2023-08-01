@@ -71,10 +71,65 @@ login -> login component -> login.html
 
 ----------------------------------------------------------------
 
+https://github.com/tejasshah2k19/23-angular-r-1
+
+
+route -> app.routin-module.ts 
+
+signup->  firstname email password -> form X 
+                we don't required name attribute 
+
+                read -> html data -> component -> 
+
+                <input type="text"> bind -> variable -> instance variable -> respective component 
+
+                Login.html-> text 
+
+                login.component.ts -> email and password -> html -> bind -> read 
+
+                ngModel ->  formsModule -> app.module.ts 
+
+                print -> html -> 
+                component email = "ram" -> print -> html -> {{ }} -> 
+
+
+                () => event 
+                (click) =>"login()" => ts  
 
 
 
 
+npm install ngx-toastr --save
+npm install @angular/animations --save
 
+css 
+        angular.json -> style[] 
+
+app.module.ts 
+        import 
+
+user 
+        ToasterService 
+
+        private obj:ToasterService 
+
+        obj.sucess("","",{})
+
+
+
+HttpClient -> to call rest api 
+
+HttpModule 
+
+import { HttpClientModule} from '@angular/common/http' 
+
+
+app.module.ts -> import [ 
+        HttpClientModule 
+]
+
+constructor(private httpClient:HttpClient ){
+
+}
 
 

@@ -1,11 +1,25 @@
-<p>Login</p>
 
-{{x}} 
+<div class="container"> 
+    <div class="row">
+        <div class="col-md-4"></div>
 
+        <div class="col-md-4">
+            <div class="form-group"> 
+             Email : <input type="text" [(ngModel)]="email" class="form-control" />  
+            </div>
 
-Email : <input type="text"   [(ngModel)]="email" /><br>
-Password : <input type="password" [(ngModel)]="password" /><br>
+            <div class="form-group">
 
-<button (click)="login()">Login</button>
+                Password : <input type="password" [(ngModel)]="password" class="form-control" /><br>
+            
+            </div>
+            <button (click)="login()" class="btn btn-primary">Login</button>
+            <br><br>
+            <a routerLink="/signup">Signup</a>            
+        </div>
 
-<a routerLink="/signup">Signup</a>
+        <div class="col-md-4"></div>
+
+    </div>
+
+</div>
