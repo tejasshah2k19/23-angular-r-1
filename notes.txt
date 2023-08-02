@@ -133,3 +133,28 @@ constructor(private httpClient:HttpClient ){
 }
 
 
+----------------------------------------------
+angular -> object -> 
+class A{ 
+
+        //obj:ClassName = new 
+        constructor(private obj:ClassName){
+                //
+        }
+
+
+        add(){
+                this.obj 
+        }
+}
+
+singleton design pattern 
+
+navigate -> component -> component -> Router 
+
+angular -> REST API -> HttpClient 
+
+module import -> app.module.ts -> import = [HttpClientModule] 
+
+
+
