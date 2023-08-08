@@ -1,0 +1,28 @@
+
+ <div class="container">
+    <div class="row">
+        <div class="col-md-12"></div>
+         
+
+            <table border="1" *ngIf="users" class="table table-dashed table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>UserId</th>
+                        <th>FirstName</th>
+                        <th>Email</th>
+                       
+                    </tr>
+            
+                </thead>
+            
+                <tbody>
+                        <tr *ngFor="let user of users">
+                            <td>{{user._id}}</td>
+                            <td>{{user.firstName}}</td>
+                            <td>{{user.email}}</td>
+                        </tr>
+                </tbody>
+            </table> 
+    </div>
+ </div>
+ 
