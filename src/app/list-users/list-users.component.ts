@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-list-users',
@@ -10,7 +11,7 @@ export class ListUsersComponent {
 
     apiResponse:any = {}
     users:Array<any>=[]
-    constructor(private httpClient:HttpClient){
+    constructor(private httpClient:HttpClient,private toastr:ToastrService){
       this.getAllUsers()
     }
 
@@ -26,5 +27,17 @@ export class ListUsersComponent {
         },err=>{
 
         })
+    }
+
+    deleteUser(userId:string){
+      //alert("delete"+userId);
+      this.httpClient.delete("https://demopass.onrender.com/deleteuser/"+userId).subscribe(resp=>{
+        this.getAllUsers();
+      this.toastr.success("","User Removed",{timeOut:3000})
+      })
+    }
+    viewUser(userId:string){
+      //get user by id 
+      
     }
 }

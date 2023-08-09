@@ -163,3 +163,6 @@ angular --> rest api -> node { render }
 
 signup 
 
+get https://demopass.onrender.com/getallusers
+delete https://demopass.onrender.com/deleteuser/64cf699c21a9b69857f4e265
+
