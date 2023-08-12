@@ -22,6 +22,8 @@
                             <td>{{user.email}}</td>
                             <td><span style="text-decoration: underline;color:blue;cursor: pointer;" (click)="deleteUser(user._id)">Delete</span>|
                                 <span style="text-decoration: underline;color:blue;cursor: pointer;" (click)="viewUser(user._id)">View</span>|
+
+                                <p-button (click)="showDialog()" styleClass="lnk" label="view"></p-button>
                                 
                             </td>
                         </tr>
@@ -30,3 +32,13 @@
     </div>
  </div>
  
+
+
+ <p-dialog header="Header" [(visible)]="visible" [breakpoints]="{ '960px': '75vw' }" [style]="{ width: '50vw' }" [draggable]="false" [resizable]="false">
+    <p>
+   
+        {{firstName}}
+<br>
+        {{email}}
+</p>
+</p-dialog>

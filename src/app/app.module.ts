@@ -12,6 +12,9 @@ import { ToastrModule } from 'ngx-toastr';
 import {HttpClientModule} from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { ListUsersComponent } from './list-users/list-users.component'
+import { DialogModule } from 'primeng/dialog';
+import { ButtonModule } from 'primeng/button';
+
 
 @NgModule({
   declarations: [
@@ -26,8 +29,11 @@ import { ListUsersComponent } from './list-users/list-users.component'
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule, // required animations module
+    ButtonModule, 
+    DialogModule,
     ToastrModule.forRoot(), // ToastrModule added
     HttpClientModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

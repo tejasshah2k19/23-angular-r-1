@@ -11,6 +11,9 @@ export class ListUsersComponent {
 
     apiResponse:any = {}
     users:Array<any>=[]
+    firstName = ""
+    email  = ""
+    visible:boolean=false 
     constructor(private httpClient:HttpClient,private toastr:ToastrService){
       this.getAllUsers()
     }
@@ -40,4 +43,10 @@ export class ListUsersComponent {
       //get user by id 
       
     }
-}
+
+    showDialog(){
+      this.visible = true 
+      console.log("hi");
+      
+    }
+  }
