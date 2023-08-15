@@ -13,6 +13,8 @@ export class ListUsersComponent {
     users:Array<any>=[]
     firstName = ""
     email  = ""
+    data:any = {}
+    uId = ""
     visible:boolean=false 
     constructor(private httpClient:HttpClient,private toastr:ToastrService){
       this.getAllUsers()
@@ -44,9 +46,15 @@ export class ListUsersComponent {
       
     }
 
-    showDialog(){
-      this.visible = true 
-      console.log("hi");
+    showDialog(userId:string){
       
+      console.log("hi");
+        this.uId = userId
+        this.httpClient.get("https://demopass.onrender.com/getuserbyid/"+userId).subscribe(resp=>{
+          this.data = resp 
+          this.firstName = this.data.data.firstName 
+          this.email  = this.data.data.email 
+          this.visible = true 
+        })
     }
   }
