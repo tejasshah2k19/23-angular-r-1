@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { Route, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -16,7 +17,7 @@ export class ListUsersComponent {
     data:any = {}
     uId = ""
     visible:boolean=false 
-    constructor(private httpClient:HttpClient,private toastr:ToastrService){
+    constructor(private httpClient:HttpClient,private toastr:ToastrService,private router:Router){
       this.getAllUsers()
     }
 
@@ -57,4 +58,12 @@ export class ListUsersComponent {
           this.visible = true 
         })
     }
+  
+    editUser(userId:string){
+      // alert(userId);
+      this.router.navigateByUrl("/edituser/"+userId)
+      //edituser/h45kih654kjh645k6
+    }
+  
+  
   }
