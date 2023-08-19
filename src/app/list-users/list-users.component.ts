@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Route, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-list-users',
@@ -17,15 +18,14 @@ export class ListUsersComponent {
     data:any = {}
     uId = ""
     visible:boolean=false 
-    constructor(private httpClient:HttpClient,private toastr:ToastrService,private router:Router){
+    constructor(private userService:UserService,private toastr:ToastrService,private router:Router){
       this.getAllUsers()
     }
 
     getAllUsers(){
  
       console.log("List user api called...");
-      
-        this.httpClient.get("https://demopass.onrender.com/getallusers").subscribe(resp=>{
+      this.userService.getAllUsers().subscribe(resp=>{
           this.apiResponse = resp 
         // console.log(apiResponse); // data msg code 
         // console.log(apiResponse.data);
@@ -33,11 +33,13 @@ export class ListUsersComponent {
         },err=>{
 
         })
+
+
     }
 
     deleteUser(userId:string){
       //alert("delete"+userId);
-      this.httpClient.delete("https://demopass.onrender.com/deleteuser/"+userId).subscribe(resp=>{
+      this.userService.deleteUser(userId).subscribe(resp=>{
         this.getAllUsers();
       this.toastr.success("","User Removed",{timeOut:3000})
       })
@@ -49,14 +51,14 @@ export class ListUsersComponent {
 
     showDialog(userId:string){
       
-      console.log("hi");
-        this.uId = userId
-        this.httpClient.get("https://demopass.onrender.com/getuserbyid/"+userId).subscribe(resp=>{
-          this.data = resp 
-          this.firstName = this.data.data.firstName 
-          this.email  = this.data.data.email 
-          this.visible = true 
-        })
+      // console.log("hi");
+      //   this.uId = userId
+      //   this.httpClient.get("https://demopass.onrender.com/getuserbyid/"+userId).subscribe(resp=>{
+      //     this.data = resp 
+      //     this.firstName = this.data.data.firstName 
+      //     this.email  = this.data.data.email 
+      //     this.visible = true 
+      //   })
     }
   
     editUser(userId:string){
