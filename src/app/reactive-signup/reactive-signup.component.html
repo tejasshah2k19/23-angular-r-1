@@ -11,9 +11,29 @@
           <br><br>
             Email:
             <input type="text" formControlName="email">
+            
+            <span class="error" *ngIf="myForm.get('email')?.touched && !myForm.get('email')?.valid">
+
+                <span *ngIf="myForm.get('email')?.hasError('required')">
+                    Please Enter Email 
+                </span>
+                <span *ngIf="myForm.get('email')?.hasError('emailInvalid')">
+                    Please Enter Valid Email 
+                </span>
+            </span>
+            
             <br><br>
             Password: 
             <input type="password" formControlName="password"/>
+            <span class="error" *ngIf="myForm.get('password')?.touched && !myForm.get('password')?.valid">
+
+              <span *ngIf="myForm.get('password')?.hasError('required')">
+                  Please Enter Password 
+              </span>
+              <span *ngIf="myForm.get('password')?.hasError('minlength')">
+                  Please Enter Atleast 8 Characters
+              </span>
+          </span>
             <br><br>
             <input type="submit" value="Signup"/>
           </form>
