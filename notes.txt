@@ -166,9 +166,22 @@ signup
 get https://demopass.onrender.com/getallusers
 delete https://demopass.onrender.com/deleteuser/64cf699c21a9b69857f4e265
 
----------------
+-----------------------------------------------------------------------------
 
 reactive forms 
 
 1) ReactiveFormsModule -> app.module.ts 
 2) component -> FormControl : input 
+
+----------------------------------------------------------------------------
+pipe 
+
+-> format -> output -> 
+
+
+public -> guard no 
+private -> guard yes -> login? yes -> go ahead no -> redirect to login 
+
+guard -> filter -> it will call before your process -> component-> guard {go ahead  / error }
+
+

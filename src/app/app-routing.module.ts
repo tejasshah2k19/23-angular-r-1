@@ -6,15 +6,18 @@ import { HomeComponent } from './home/home.component';
 import { ListUsersComponent } from './list-users/list-users.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { ReactiveSignupComponent } from './reactive-signup/reactive-signup.component';
+import  {  LoginCheckGuard }   from './login-check.guard';
+import { LogoutComponent } from './logout/logout.component';
 
 const routes: Routes = [
   {path:"signup",component:SignupComponent},
   {path:"login",component:LoginComponent},
   {path:"",component:LoginComponent},
-  {path:"home",component:HomeComponent},
+  {path:"home",component:HomeComponent,canActivate:[LoginCheckGuard]},
   {path:"users",component:ListUsersComponent},
-  {path:"edituser/:userId",component:EditUserComponent},
-  {path:"signup2",component:ReactiveSignupComponent}
+  {path:"edituser/:userId",component:EditUserComponent} ,
+  {path:"signup2",component:ReactiveSignupComponent},
+  {path:"logout",component:LogoutComponent}
 ];
 
 @NgModule({

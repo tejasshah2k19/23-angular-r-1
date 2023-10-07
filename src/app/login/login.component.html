@@ -22,4 +22,40 @@
 
     </div>
 
+    <br><br>
+
+    <ngx-loading
+    [show]="loading"
+    [config]="{ backdropBorderRadius: '3px' }"
+  ></ngx-loading>
+    <br>
+
+
+    {{name | uppercase}}<br>
+    {{name | lowercase}}<br>
+    {{name | titlecase}}<br>
+    {{fullName | titlecase}}<br>
+    {{today}}<Br>
+    {{today | date }}
+    <br>
+    {{today | date :'full' }}
+    <br>
+    {{amount}} 
+    <br>
+    {{amount | currency}}   
+    <br>
+    {{amount | currency : "INR"}}
+    <br>
+    <!-- <p>  {{amount | currency:'INR':'symbol':'4.2-2':'in'}}</p> -->
+      
+    
+      <br>
+     => {{ 123.45| number:'4.2-3' }}
+
+      <br>
+     => {{ 123.4| number:'4.2-3' }}
+        
+
 </div>
+
+<!-- date number currency -->

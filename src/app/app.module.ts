@@ -16,6 +16,8 @@ import { DialogModule } from 'primeng/dialog';
 import { ButtonModule } from 'primeng/button';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { ReactiveSignupComponent } from './reactive-signup/reactive-signup.component';
+import { NgxLoadingModule } from 'ngx-loading';
+import { LoginCheckGuard } from './login-check.guard';
 
 
 @NgModule({
@@ -37,10 +39,11 @@ import { ReactiveSignupComponent } from './reactive-signup/reactive-signup.compo
     DialogModule,
     ToastrModule.forRoot(), // ToastrModule added
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxLoadingModule.forRoot({})
     
   ],
-  providers: [],
+  providers: [LoginCheckGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

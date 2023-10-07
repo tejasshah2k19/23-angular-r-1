@@ -31,7 +31,6 @@ export class ReactiveSignupComponent {
     console.log("->"+control.hasError("required"));
     if(control.hasError('required')){ 
       console.log("ignore");
-      
       return {
         emailInvalid:false 
       }
